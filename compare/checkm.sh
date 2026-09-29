@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=RP_checkm
+#SBATCH --job-name=checkm
 #SBATCH --output=%x.log
 #SBATCH --error=%x.err
 #SBATCH --ntasks=1
@@ -14,7 +14,7 @@ date
 
 source  $GROUP_HOME/modules/pkgs/mamba/main/etc/profile.d/conda.sh
 conda activate checkm
-
+≈
 checkm lineage_wf --genes --extension faa --threads 1 faas/ checkm
 
 echo "===== Ending job ($SLURM_JOB_ID) ====="

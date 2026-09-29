@@ -13,10 +13,13 @@ echo "===== Starting job ($SLURM_JOB_ID) ====="
 date
 
 module load orthofinder
-
 mkdir orthofinder
 
-
+orthofinder \
+    -f genomes/ \
+    -o orthofinder/ \
+    -t $SLURM_CPUS_PER_TASK \
+    -a $SLURM_CPUS_PER_TASK
 
 echo "===== Ending job ($SLURM_JOB_ID)====="
 date
